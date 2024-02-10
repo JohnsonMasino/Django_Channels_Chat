@@ -19,7 +19,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'chat.apps.ChatConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -28,8 +27,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'chat.apps.ChatConfig',
+
     'channels',
 ]
+
+ASGI_APPLICATION = 'mywebtest.asgi.application'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
