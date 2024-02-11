@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
-def Page(request):
+def chat_page(request):
     return render(request, 'chat/chat_page.html')
