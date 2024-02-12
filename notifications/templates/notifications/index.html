@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <title>Notifications</title>
+    </head>
+    <body>
+        <h1>Notifications</h1>
+        <ul>
+            {% for notification in notifications %}
+                <li>{{ notification }}</li>
+            {% endfor %}
+        </ul>
+        <script>
+            const notificationsSocket = new WebSocket(
+                'ws://'
+                + window.location.host
+                + '/ws/notifications/'
+            );
+
+            notificationsSocket.onmessage = function(e) {
+                const data = JSON.parse(e.data);
+                console.log(data);
+                document.querySelector('#log').innerHTML += '<li>' + data.message + '</li>';
+            }
+
+            notificationsSocket.onclose = function(e) {
+                console.error('Chat socket closed unexpectedly');
+            }
+
+            document.querySelector('#button').onclick = function(e) {
+                const username = document.querySelector('#username');
+                const message = username.value + 'click the button';
+                notificationsSocket.send(JSON.stringify({
+                    'message': message
+                }));
+            };
+        </script>
+    </body>
+</html>

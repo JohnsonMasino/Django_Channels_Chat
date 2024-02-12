@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'chat.apps.ChatConfig',
+    'notifications.apps.NotificationsConfig',
 ]
 
 ASGI_APPLICATION = 'mywebtest.asgi.application'
