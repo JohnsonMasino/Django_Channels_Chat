@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'notifications.apps.NotificationsConfig',
 ]
 
+# setting the asgi application
 ASGI_APPLICATION = 'mywebtest.asgi.application'
 
 CHANNEL_LAYERS = {
