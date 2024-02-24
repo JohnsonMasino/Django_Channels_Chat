@@ -36,12 +36,14 @@ INSTALLED_APPS = [
 # setting the asgi application
 ASGI_APPLICATION = 'mywebtest.asgi.application'
 
+# This is for testing and not good for production level
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels.layers.InMemoryChannelLayer',
     }
 }
 
+# Using Redis for Production
 # CHANNEL_LAYERS = {
 #     "default": {
 #         "BACKEND": "channels_redis.core.RedisChannelLayer",
