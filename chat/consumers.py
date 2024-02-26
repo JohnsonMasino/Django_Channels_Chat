@@ -2,6 +2,7 @@ import json
 from channels.generic.websocket import WebsocketConsumer
 from asgiref.sync import async_to_sync
 
+# ChatConsumer class
 class ChatConsumer(WebsocketConsumer):
     def connect(self):
         self.room_group_name = 'chat_room'
@@ -13,6 +14,7 @@ class ChatConsumer(WebsocketConsumer):
 
         self.accept()
 
+    # Disconnect from the websocket
     def receive(self, text_data):
         text_data_json = json.loads(text_data)
         message = text_data_json['message']
@@ -25,6 +27,7 @@ class ChatConsumer(WebsocketConsumer):
             }
         )
 
+    # Receive message from room group
     def chat_message(self, event):
         message = event['message']
 
