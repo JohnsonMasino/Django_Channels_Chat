@@ -43,7 +43,9 @@ CHANNEL_LAYERS = {
     }
 }
 
-# Using Redis for Production
+# Using Redis is better for Production level
+# This is the basic set up
+
 # CHANNEL_LAYERS = {
 #     "default": {
 #         "BACKEND": "channels_redis.core.RedisChannelLayer",
