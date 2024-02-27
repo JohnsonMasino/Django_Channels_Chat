@@ -44,7 +44,7 @@ CHANNEL_LAYERS = {
 }
 
 # Using Redis is better for Production level
-# This is the basic set up
+# This is the basic set up for redis
 
 # CHANNEL_LAYERS = {
 #     "default": {
