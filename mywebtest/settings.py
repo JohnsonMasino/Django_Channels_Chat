@@ -44,6 +44,7 @@ CHANNEL_LAYERS = {
 }
 
 # Using Redis is better for Production level
+# But you have to install Redis and Redis server and set them up.
 # This is the basic set up for redis
 
 # CHANNEL_LAYERS = {
