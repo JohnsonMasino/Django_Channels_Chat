@@ -6,3 +6,4 @@ For any logged in device, all messages are real time.
 ## Notification System
 ## Online status
 ## Read Status
+## One to one chat
