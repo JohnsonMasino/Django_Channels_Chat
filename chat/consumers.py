@@ -2,7 +2,7 @@ import json
 from channels.generic.websocket import WebsocketConsumer
 from asgiref.sync import async_to_sync
 from channels.db import database_sync_to_async
-from .models import Message
+from .models import Messaging
 
 # ChatConsumer class
 class ChatConsumer(WebsocketConsumer):
@@ -41,7 +41,7 @@ class ChatConsumer(WebsocketConsumer):
     @database_sync_to_async
     def delete_message(self, message_id):
         try:
-            message = Message.objects.get(id=message_id)
+            message = Messaging.objects.get(id=message_id)
             message.delete()
-        except Message.DoesNotExist:
+        except Messaging.DoesNotExist:
             pass
