@@ -45,3 +45,6 @@ class ChatConsumer(WebsocketConsumer):
             message.delete()
         except Messaging.DoesNotExist:
             pass
+        except exception as e:
+            print(e)
+        
