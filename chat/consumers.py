@@ -35,7 +35,7 @@ class ChatConsumer(WebsocketConsumer):
 
         self.send(text_data=json.dumps({
             'type': 'chat',
-            'message': message
+            'message': message 
         }))
 
     @database_sync_to_async
